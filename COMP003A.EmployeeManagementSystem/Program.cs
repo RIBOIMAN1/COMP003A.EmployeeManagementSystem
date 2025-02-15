@@ -11,16 +11,17 @@ namespace COMP003A.EmployeeManagementSystem
 		{
 			try
 			{
-				employeeInfo employee = new employeeInfo();
-				employee.employeeId = "34IG";
-				employee.firstName = "Riley";
-				employee.middleName = "Scott";
-				employee.lastName = "Benson";
-				employee.salary = 75000;
-
 				// Input employee details.
 				Console.Write("Enter Employee ID: ");
-				employee.employeeId = int.Parse(employee.employeeId);
+				string employeeId = Console.ReadLine();
+				Console.Write("Enter First Name: ");
+				string firstName = Console.ReadLine();
+				Console.Write("Enter Middle Name: ");
+				string middleName = Console.ReadLine();
+				Console.Write("Enter Last Name: ");
+				string lastName = Console.ReadLine();
+				Console.Write("Enter Salary: ");
+				double salary = double.Parse(Console.ReadLine());
 			}
 			catch (Exception)
 			{
