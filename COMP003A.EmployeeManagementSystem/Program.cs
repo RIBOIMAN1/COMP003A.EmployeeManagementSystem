@@ -102,5 +102,43 @@ namespace COMP003A.EmployeeManagementSystem
 				}
 			}
 		}
+		/// <summary>
+		/// New instance of Employee class.
+		/// </summary>
+		/// <param name="employeeId">ID of the employee.</param>
+		/// <param name="firstName">First name of the employee.</param>
+		/// <param name="lastName">Last name of the employee.</param>
+		/// <param name="salary">Salary of the employee.</param>
+		/// <param name="middleName">Middle name, if it exists, of the employee.</param>
+		public Employee(string employeeId, string firstName, string lastName, double salary, string middleName = "")
+		{
+			_employeeId = employeeId;
+			FirstName = firstName;
+			LastName = lastName;
+			Salary = salary;
+			MiddleName = middleName;
+		}
+		/// <summary>
+		/// Displays the full name of the employee.
+		/// </summary>
+		public void PrintFullName()
+		{
+			if (string.IsNullOrWhiteSpace(MiddleName))
+			{
+				Console.WriteLine($"Name: {FirstName} {LastName}");
+			}
+			else
+			{
+				Console.WriteLine($"Name: {FirstName} {MiddleName} {LastName}");
+			}
+		}
+		/// <summary>
+		/// Displays information about the employee to the user.
+		/// </summary>
+		public void DisplayEmployeeInfo()
+		{
+			Console.WriteLine($"Employee ID: {EmployeeId}");
+			Console.WriteLine($"{PrintFullName}");
+		}
 	}
 }
