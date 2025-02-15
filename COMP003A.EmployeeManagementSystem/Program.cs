@@ -28,11 +28,12 @@ namespace COMP003A.EmployeeManagementSystem
 				Console.WriteLine("You have inputted an invalid input, try again.");
 
 			}
+			Console.WriteLine("\nEmployee Created Successfully!");
 		}
-		/// <summary>
-		/// Showcases employee credentials to the user.
-		/// </summary>
 	}
+	/// <summary>
+	/// Showcases employee credentials to the user.
+	/// </summary>
 	public class employeeInfo
 	{
 		private string _employeeId;
@@ -40,26 +41,40 @@ namespace COMP003A.EmployeeManagementSystem
 		private string _middleName;
 		private string _lastName;
 		private double _salary;
-
+		/// <summary>
+		/// Gathers the input of the employee ID.
+		/// </summary>
 		public string EmployeeId
 		{
 			get { return _employeeId; }
 		}
+		/// <summary>
+		/// Gathers the input of the employee's first name.
+		/// </summary>
 		public string FirstName
 		{
 			get { return _firstName; }
 			set { _firstName = value; }
 		}
+		/// <summary>
+		/// Gathers the input of the employee's middle name.
+		/// </summary>
 		public string MiddleName
 		{
 			get { return _middleName; }
 			set { _middleName = value; }
 		}
+		/// <summary>
+		/// Gathers the input of the employee's last name.
+		/// </summary>
 		public string LastName
 		{
 			get { return _lastName; }
 			set { _lastName = value; }
 		}
+		/// <summary>
+		/// Gathers the input of the employee's salary.
+		/// </summary>
 		public double Salary
 		{
 			get { return _salary; }
