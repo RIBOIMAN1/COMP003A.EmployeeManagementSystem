@@ -9,7 +9,7 @@ namespace COMP003A.EmployeeManagementSystem
 	/// <summary>
 	/// Represents a department.
 	/// </summary>
-	internal class Department
+	public abstract class Department
 	{
 		/// <summary>
 		/// Receives the department name.

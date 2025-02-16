@@ -31,6 +31,9 @@ namespace COMP003A.EmployeeManagementSystem
 			{
 				Console.WriteLine("You have inputted an invalid input, try again.");
 			}
+			/// <summary>
+			/// Displays employee information to the user.
+			/// </summary>
 			Console.WriteLine("\nEmployee Created Successfully!");
 			Console.WriteLine($"\nEmployee ID: {employeeId}");
 		}
