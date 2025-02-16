@@ -5,32 +5,6 @@
 
 namespace COMP003A.EmployeeManagementSystem
 {
-	internal class Program
-	{
-		static void Main(string[] args)
-		{
-			try
-			{
-				// Input employee details.
-				Console.Write("Enter Employee ID: ");
-				string employeeId = Console.ReadLine();
-				Console.Write("Enter First Name: ");
-				string firstName = Console.ReadLine();
-				Console.Write("Enter Middle Name: ");
-				string middleName = Console.ReadLine();
-				Console.Write("Enter Last Name: ");
-				string lastName = Console.ReadLine();
-				Console.Write("Enter Salary: ");
-				double salary = double.Parse(Console.ReadLine());
-			}
-			catch (Exception)
-			{
-				Console.WriteLine("You have inputted an invalid input, try again.");
-
-			}
-			Console.WriteLine("\nEmployee Created Successfully!");
-		}
-	}
 	/// <summary>
 	/// Showcases employee credentials to the user.
 	/// </summary>
@@ -139,6 +113,62 @@ namespace COMP003A.EmployeeManagementSystem
 		{
 			Console.WriteLine($"Employee ID: {EmployeeId}");
 			Console.WriteLine($"{PrintFullName}");
+			Console.WriteLine($"Salary: {Salary:C}");
+		}
+		/// <summary>
+		/// Represents a department using an abstract class.
+		/// </summary>
+		public abstract class Department
+		{
+			/// <summary>
+			/// Receives the department name.
+			/// </summary>
+			public string DepartmentName { get; set; }
+
+			/// <summary>
+			/// Gets details about the department.
+			/// </summary>
+			/// <returns>String that has details about the department.</returns>
+			public abstract string GetDepartmentDetails();
+
+			/// <summary>
+			/// Displays information about the department.
+			/// </summary>
+			public void DisplayDepartmentInfo()
+			{
+				Console.WriteLine($"Department: {DepartmentName}");
+				Console.WriteLine($"Details: {GetDepartmentDetails()}");
+			}
+		}
+	}
+	/// <summary>
+	/// Question prompts asking the user employee information.
+	/// </summary>
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+			string employeeId = null;
+			try
+			{
+				// Input employee details.
+				Console.Write("Enter Employee ID: ");
+				employeeId = Console.ReadLine();
+				Console.Write("Enter First Name: ");
+				string firstName = Console.ReadLine();
+				Console.Write("Enter Middle Name: ");
+				string middleName = Console.ReadLine();
+				Console.Write("Enter Last Name: ");
+				string lastName = Console.ReadLine();
+				Console.Write("Enter Salary: ");
+				double salary = double.Parse(Console.ReadLine());
+			}
+			catch (Exception)
+			{
+				Console.WriteLine("You have inputted an invalid input, try again.");
+			}
+			Console.WriteLine("\nEmployee Created Successfully!");
+			Console.WriteLine($"\nEmployee ID: {employeeId}");
 		}
 	}
 }
