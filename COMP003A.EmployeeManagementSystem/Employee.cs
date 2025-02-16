@@ -73,8 +73,9 @@ namespace COMP003A.EmployeeManagementSystem
 			{
 				if (value < 0)
 				{
-					Console.WriteLine("This is an invalid salary value since your salary value cannot be less than 0, try again.");
+					throw new ArgumentException("This is an invalid salary value since your salary value cannot be less than 0, try again.");
 				}
+				_salary = value;
 			}
 		}
 		/// <summary>
@@ -113,7 +114,7 @@ namespace COMP003A.EmployeeManagementSystem
 		public void DisplayEmployeeInfo()
 		{
 			Console.WriteLine($"Employee ID: {EmployeeId}");
-			Console.WriteLine($"{PrintFullName}");
+			PrintFullName();
 			Console.WriteLine($"Salary: {Salary:C}");
 		}
 		/// <summary>
