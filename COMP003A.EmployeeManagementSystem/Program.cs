@@ -20,22 +20,35 @@ namespace COMP003A.EmployeeManagementSystem
 				employeeId = Console.ReadLine();
 				Console.Write("Enter First Name: ");
 				string firstName = Console.ReadLine();
-				Console.Write("Enter Middle Name: ");
+				Console.Write("Enter Middle Name (Press Enter to skip): ");
 				string middleName = Console.ReadLine();
 				Console.Write("Enter Last Name: ");
 				string lastName = Console.ReadLine();
 				Console.Write("Enter Salary: ");
 				double salary = double.Parse(Console.ReadLine());
+				/// <summary>
+				/// Displays employee information to the user.
+				/// </summary>
+				Console.WriteLine("\nEmployee Created Successfully!");
+				Employee employee = new Employee(employeeId, firstName, lastName, salary, middleName);
+				employee.DisplayEmployeeInfo();
+				Console.WriteLine();
+				HRDepartment hrDepartment = new HRDepartment();
+				ITDepartment itDepartment = new ITDepartment();
+				hrDepartment.DisplayDepartmentInfo();
+				hrDepartment.Operate();
+				Console.WriteLine();
+				itDepartment.DisplayDepartmentInfo();
+				itDepartment.Operate();
+			}
+			catch (FormatException)
+			{
+				Console.WriteLine("Invalid salary format. Please enter a numeric value.");
 			}
 			catch (Exception)
 			{
 				Console.WriteLine("You have inputted an invalid input, try again.");
 			}
-			/// <summary>
-			/// Displays employee information to the user.
-			/// </summary>
-			Console.WriteLine("\nEmployee Created Successfully!");
-			Console.WriteLine($"\nEmployee ID: {employeeId}");
 		}
 	}
 }
